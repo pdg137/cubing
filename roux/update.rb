@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'open-uri'
 
 def to_filename(name)
@@ -30,6 +31,12 @@ def record_group(n, group)
   html.write('</div>')
 end
 
+record_group('CFOP PLL',
+  'CFOP PLL' => ["x R' U R' D2 R U' R' D2 R2 x'", 'U0U2-s4,U2U8-s4,U8U0-s4'],
+)
+
+exit
+
 record_group('CFOP OLL',
   'CMLL U 3a' => ["R2 D R' U2 R D' R' U2 R'", 'U2U8,U8U2'],
   'CMLL L 5a' => ["R' F R B' R' F' R B", 'U6U8,U8U6'],
@@ -44,7 +51,6 @@ record_group('CMLL U',
   'CMLL U _' => ["F R U R' U' F'", 'U2U6,U6U2'],
 )
 
-exit
 record_group('CMLL S',
   "CMLL S 1" => ["R U R' U R U2 R'", ''],
   "CMLL S 2" => ["L' U2 L U2 L F' L' F", 'U0U2,U2U0'],
